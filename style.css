@@ -1,0 +1,98 @@
+/* General */
+
+.input {
+    width: 520px !important;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 3rem;
+    min-height: 100vh;
+    box-shadow: 1px 1px 7px 1px rgb(85, 85, 85);
+}
+.control {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    margin-bottom: 16px;
+}
+.control  label {
+    margin-right: 34px;
+    width: 180px;
+    display: flex;
+    justify-content: end;
+    
+}
+
+/* Head */
+
+.head {
+    margin-top: 16px;
+    text-align: center;
+    
+}
+.head img {
+    padding-top: 6px;
+}
+
+/* Radio */
+
+.radio-box {
+    padding: 3rem 3rem;
+}
+.radio-box__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Address field */
+
+.control .label-multiline {
+    width: 170px;
+}
+.label-multiline-second {
+    width: 120px !important;
+}
+.grouped {
+    max-width: 170px !important;
+    width: 100%;
+}
+.expanded {
+    width: calc(520px - 52.18px - 24px) !important;
+}
+.has-addons{
+    margin-bottom: -16px;
+}
+
+/* Checkbox */
+
+.checkbox-content {
+    margin-bottom: 24px;
+}
+.checkbox-content label {
+    margin-right: 34px;
+    width: 170px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.etc-field {
+    margin-bottom: 100px;
+}
+
+/* Modal pop-up */
+
+.display-none {
+    display: none ;
+}
+
+.js-modal-trigger {
+    width: 200px !important;
+    margin-bottom: 50px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 30px;
+}

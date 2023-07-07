@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <main class="container is-max-widescreen">
+        <div class="head">
+            <h1 class="is-size-2 has-text-success">АвтоМастер <img src="logo-48.png" alt="Лого автосервиса"></h1>
+            <p><b>Форма регистрации</b></p>
+        </div>
+        <section class="radio-box">
+            <div class="field radio-box__field">
+                <label class="label">Вы регистрируетесь как</label>
+                <label class="radio">
+                    <label class="label"><input type="radio" name="answer" class="buyer">Покупатель</label>
+                </label>
+                <label class="radio second">
+                    <label class="label"><input type="radio" name="answer" class="supplier" >Поставщик</label>
+                </label>
+            </div>
+        </section>
+        <section class="email">
+            <div class="control">
+                <label>Эл.почта</label>
+                <input class="input" type="email">
+            </div>
+        </section>
+        <section class="name-of-organization">
+            <div class="field">
+                <label class="label">Название организации</label>
+                <div class="control">
+                    <label>ИП или Юр.лицо</label>
+                    <input class="input" type="text">
+                </div>
+                <div class="control">
+                    <label>ИНН</label>
+                    <input class="input" type="text">
+                </div>
+            </div>
+        </section>
+        <section class="address-field">
+            <div class="field">
+                <label class="label">Фактический адрес</label>
+                <div class="control">
+                    <label>Ваш город</label>
+                    <input class="input" type="text">
+                </div>
+                <div class="field is-grouped is-grouped-multiline">
+                    <div class="control">
+                        <label class="label-multiline">Улица</label>
+                        <input class="input grouped" type="text">
+                    </div>
+                    <div class="control">
+                        <label class="label-multiline-second">Дом/стр.</label>
+                        <input class="input grouped" type="text">
+                    </div>
+                    <div class="control">
+                        <label class="label-multiline-second">Офис</label>
+                        <input class="input grouped" type="text">
+                    </div>
+                </div>
+                <div class="control">
+                    <label>Телефон</label>
+                    <div class="field has-addons">
+                        <div class="control">
+                            <a class="button is-static">
+                                +7
+                            </a>
+                        </div>
+                        <div class="control ">
+                            <input class="input expanded" type="tel">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control site">
+                    <label>Сайт Вашей компании</label>
+                    <input class="input" type="text">
+                </div>
+            </div>
+
+        </section>
+        <section class="checkboxing">
+            <div class="field">
+                <label class="label">Виды деятельности</label>
+                <div class="field is-flex is-flex-direction-column">
+
+                    <label class="checkbox checkbox-content is-flex">
+                        <label>Магазин</label>
+                        <input type="checkbox">
+                    </label>
+
+                    <label class="checkbox checkbox-content is-flex">
+                        <label>Региональная сеть <br /> магазинов</label>
+                        <input type="checkbox">
+                    </label>
+
+                    <label class="checkbox checkbox-content is-flex">
+                        <label>Федеральная сеть <br /> магазинов</label>
+                        <input type="checkbox">
+                    </label>
+
+                    <label class="checkbox checkbox-content is-flex">
+                        <label>Интернет-магазин</label>
+                        <input type="checkbox">
+                    </label>
+
+
+                    <label class="checkbox checkbox-content is-flex">
+                        <label>Автосервис</label>
+                        <input type="checkbox">
+                    </label>
+
+                    <div class="control etc-field">
+                        <label>Прочее</label>
+                        <input class="input" type="text">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div id="modal-js-example" class="modal">
+            <div class="modal-background"></div>
+          
+            <div class="modal-content">
+              <div class="box">
+                <p>Готово! Ваша заявка на регистрацию отправлена!</p>
+              </div>
+            </div>
+          
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+        <button class="js-modal-trigger button is-link" data-target="modal-js-example">
+            Отправить заявку
+        </button>
+    </main>
+    
+    <footer>
+
+    </footer>
+
+
+
+    <script>
+        const buyer = document.querySelector('.buyer');
+        const site = document.querySelector('.site');
+        const supplier = document.querySelector('.supplier')
+
+
+        buyer.onclick = function () {
+            site.classList.add("display-none")
+        }
+
+        supplier.onclick = function () {
+            site.classList.remove("display-none")
+
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+
+            function openModal($el) {
+                $el.classList.add('is-active');
+            }
+
+            function closeModal($el) {
+                $el.classList.remove('is-active');
+            }
+
+            function closeAllModals() {
+                (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+                    closeModal($modal);
+                });
+            }
+
+
+            (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+                const modal = $trigger.dataset.target;
+                const $target = document.getElementById(modal);
+
+                $trigger.addEventListener('click', () => {
+                    openModal($target);
+                });
+            });
+
+
+            (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+                const $target = $close.closest('.modal');
+
+                $close.addEventListener('click', () => {
+                    closeModal($target);
+                });
+            });
+
+
+            document.addEventListener('keydown', (event) => {
+                const e = event || window.event;
+
+                if (e.keyCode === 27) {
+                    closeAllModals();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
